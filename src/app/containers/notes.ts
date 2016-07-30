@@ -25,4 +25,6 @@ import { NoteCard } from '../ui/note-card';
     </div>	
     `
 })
-export class Notes { };
+export class Notes {
+    note = { title: 'clean up', value: 'clean room' }
+};

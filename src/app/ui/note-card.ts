@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'note-card',
@@ -40,14 +40,19 @@ import { Component } from '@angular/core';
         <i class="material-icons">check</i>
       </div>
       <div class="col-xs-12 title">
-        {{ note.title }}
+        {{ noteObj.title }}
       </div>
       <div class="col-xs-12 value">
-        {{ note.value }}
+        {{ noteObj.value }}
       </div>
     </div>
     `
 })
 export class NoteCard {
-    note = { title: 'clean up', value: 'clean room' }
+    @Input('note') noteObj = {}
+    // si può usare anche con lo stesso nome, senza specificarlo all'interno di Input()
+
+    onChecked() {
+        console.log('clicked');
+    }
 }
